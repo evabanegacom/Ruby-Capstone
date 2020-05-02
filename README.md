@@ -6,7 +6,7 @@ There's also the application of Rspec for demonstration and testing of these lin
 
 # Built With
 
--rubocop, VScode & ruby
+-rubocop, VScode & ruby Rspec
 
 # Prerequisites
 Visual Studio code editor
@@ -18,7 +18,7 @@ Visual Studio code editor
 - Github: (https://github.com/evabanegacom)
 - Linkedin:(https://www.linkedin.com/in/precious-udegbue-a3468314a/)
 
-Image = url(linter.png)
+(linter.png)
 # 🤝 Contributing
 Contributions, issues and feature requests are welcome!
 
