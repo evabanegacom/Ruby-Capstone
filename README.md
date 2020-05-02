@@ -18,7 +18,7 @@ Visual Studio code editor
 - Github: (https://github.com/evabanegacom)
 - Linkedin:(https://www.linkedin.com/in/precious-udegbue-a3468314a/)
 
-
+Image = url(linter.png)
 # 🤝 Contributing
 Contributions, issues and feature requests are welcome!
 
