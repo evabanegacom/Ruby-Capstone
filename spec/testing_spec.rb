@@ -25,6 +25,7 @@ describe LintError do # rubocop:disable Metrics/BlockLength
   describe '#first_line_blank' do
     it 'returns a warning if the first line in a page is blank' do
       expect(test.first_line_blank(lines)).to eql('warning: unnecessary space at beginning') # rubocop:disable Layout/LineLength
+      expect(test.first_line_blank(lines)).to eql('warning: frozen literal string missing') # rubocop:disable Layout/LineLength
     end
   end
 
