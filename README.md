@@ -3,6 +3,7 @@ This is solo project about making or simulating some ruby linting codes
 This is done with a demonstration of some object oriented programming comcepts (O.O.P)
 Using classes and methods to declare or write the lints
 There's also the application of Rspec for demonstration and testing of these linting algorithms
+the Rspec test fails if there is no error test for it
 
 # Built With
 

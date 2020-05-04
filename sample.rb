@@ -1,4 +1,4 @@
- where = [1,2,3,4,5,6];
-hhfhg
-hhhh
-with;
+name = 'louis'
+age = 25;
+school = 'university of benin ebuntayo children school, hopebay college, jersey vera, pats private'
+clas = hindredlevel 
