@@ -1,7 +1,7 @@
 class LintError # rubocop:disable Style/FrozenStringLiteralComment, Style/Documentation
   def semicolon_error(lines)
     lines.each do |line|
-      return 'warning: do not use semicolons to terminate expresssions' if line[-1] == ';' # rubocop:disable Layout/LineLength
+      return 'warning: do not use semicolons to terminate expressions' if line[-1].strip == ';' # rubocop:disable Layout/LineLength
       return 'warning: empty trailing white space' if line[-1] == ' '
     end
   end
@@ -44,4 +44,32 @@ class LintError # rubocop:disable Style/FrozenStringLiteralComment, Style/Docume
 
     item1 + item2
   end
+
+  def run_linter(lines)
+    errors = []
+    error = white_space(lines)
+    errors.append(error) if error
+    error = line_length_error(lines)
+    errors.append(error) if error
+    error = semicolon_error(lines)
+    errors.append(error) if error
+    error = end_line_space(lines)
+    errors.append(error) if error
+    error = spacing_signs(lines)
+    errors.append(error) if error
+    error = missing_string_comment(lines)
+    errors.append(error) if error
+    error = line_end(lines)
+    errors.append(error) if error
+    error = first_line_blank(lines)
+    errors.append(error) if error
+    errors
+  end
 end
+
+test = LintError.new
+file = File.open('sample.rb')
+lines = file.readlines.map(&:chomp)
+results = test.run_linter(lines)
+print 'no error' if results.length.zero?
+puts results

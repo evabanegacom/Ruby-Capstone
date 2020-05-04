@@ -4,9 +4,10 @@ describe LintError do # rubocop:disable Metrics/BlockLength
   test = LintError.new
   file = File.open('sample.rb')
   lines = file.readlines.map(&:chomp)
+
   describe '#semicolon_error' do
     it 'if gives an error if a semicolon is used to end an expression' do
-      expect(test.semicolon_error(lines)).to eql('warning: do not use semicolons to terminate expresssions') # rubocop:disable Layout/LineLength
+      expect(test.semicolon_error(lines)).to eql('warning: do not use semicolons to terminate expressions') # rubocop:disable Layout/LineLength
     end
   end
 
