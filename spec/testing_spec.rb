@@ -56,7 +56,7 @@ describe LintError do # rubocop:disable Metrics/BlockLength
   end
 
   describe '#end_line_space' do
-    it 'return a warning if there is no blank line before the last line with characters' do # rubocop:disable Layout/LineLength
+    it 'return a warning if there is no blank line after the last line with characters' do # rubocop:disable Layout/LineLength
       expect(test.end_line_space(lines)).to eql('final newline missing')
     end
   end
