@@ -18,6 +18,9 @@ class LintError # rubocop:disable Style/FrozenStringLiteralComment, Style/Docume
 
   def first_line_blank(lines)
     return 'warning: unnecessary space at beginning' if lines[0].length.zero?
+  end
+
+  def missing_string_comment(lines)
     return 'warning: frozen literal string missing' if lines[0].length.zero?
   end
 
