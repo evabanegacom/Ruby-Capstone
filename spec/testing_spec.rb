@@ -24,13 +24,13 @@ describe LintError do # rubocop:disable Metrics/BlockLength
 
   describe '#first_line_blank' do
     it 'returns a warning if the first line in a page is blank' do
-      expect(test.first_line_blank(lines)).to eql('warning: unnecessary space at beginning') # rubocop:disable Layout/LineLength
+      expect(test.first_line_blank(lines)).to eql('warning: on line 1 unnecessary space at beginning') # rubocop:disable Layout/LineLength
     end
   end
 
   describe '#missing_string_comment' do
     it 'returns a warning of missing literal string' do
-      expect(test.missing_string_comment(lines)).to eql('warning: frozen literal string missing') # rubocop:disable Layout/LineLength
+      expect(test.missing_string_comment(lines)).to eql('warning: on line 1 frozen literal string missing') # rubocop:disable Layout/LineLength
     end
   end
 
@@ -57,7 +57,7 @@ describe LintError do # rubocop:disable Metrics/BlockLength
 
   describe '#end_line_space' do
     it 'return a warning if there is no blank line after the last line with characters' do # rubocop:disable Layout/LineLength
-      expect(test.end_line_space(lines)).to eql('final newline missing')
+      expect(test.end_line_space(lines)).to eql('after line 5 final newline missing')
     end
   end
 end

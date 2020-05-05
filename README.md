@@ -5,7 +5,13 @@ Using classes and methods to declare or write the lints
 There's also the application of Rspec for demonstration and testing of these linting algorithms
 the Rspec test fails if there is no error test for it
 
+
+The Rspec will return an error message if it does not find an error that matches with it
+
+but that doesn't mean it doesn't respond. It needs to find it's matching error to return the correct value
+
 Using this file
+
 Step 1 clone this folder from my repo
 
 step 2 open this document with an editor
@@ -18,6 +24,7 @@ step 5 link your file to the rspec or include it in this folder to run the linte
 
 Linter
 I created 8 linters
+
 1 semicolon error: An array or expression should not end with a semicolon
 i.e array = [1, 2, 3, 4, 5]; even if it's a string
 
@@ -38,6 +45,7 @@ i.e array = [1, 2, 3, 4, 5]  'see the spacing befor this statement'
 6 line end lint
 it is a bad practice to leave multiple empty lines below the last line with characters
 one at least is enough
+
 # Built With
 
 -rubocop, VScode & ruby Rspec
