@@ -17,7 +17,7 @@ describe LintError do # rubocop:disable Metrics/BlockLength
   end
 
   describe '#white_space' do
-    it 'it return an error if the first character in a line a space' do
+    it 'it return an error if the first character in the first  line is a space' do
       expect(test.white_space(lines)).to eql('warning: first line identation')
     end
   end
@@ -51,7 +51,7 @@ describe LintError do # rubocop:disable Metrics/BlockLength
 
   describe '#spacing_signs' do
     it 'it returns a warning if there is an extra space at the end of an expression' do # rubocop:disable Layout/LineLength
-      expect(test.spacing_signs(lines)).to eql('warning: remove extra space')
+      expect(test.spacing_signs(lines)).to eql('warning: on line 5 remove extra space at the end')
     end
   end
 
