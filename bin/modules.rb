@@ -1,41 +1,47 @@
-class LintError # rubocop:disable Style/FrozenStringLiteralComment, Style/Documentation
+class LintError
   def semicolon_error(lines)
-    lines.each do |line|
-      return 'warning: do not use semicolons to terminate expressions' if line[-1].strip == ';' # rubocop:disable Layout/LineLength
+    lines.each_with_index do |line, index|
+      return 'warning: on line ' + (index + 1).to_s + ' do not use semicolons to terminate expressions' if line[-1] == ';' # rubocop:disable Layout/LineLength
       return 'warning: empty trailing white space' if line[-1] == ' '
     end
   end
 
   def line_length_error(lines)
-    lines.each do |line|
-      return 'warning: line is too long' if line.size >= 80
+    lines.each_with_index do |line, index|
+      return 'warning: line  ' + (index + 1).to_s + '  is too long' if line.size >= 80
     end
   end
 
   def white_space(lines)
-    return 'warning: first line identation' if lines[0][0] == ' '
+    lines.each_with_index do |_line, index|
+      return 'warning: on line ' + (index + 1).to_s + ' first line identation' if lines[0][0] == ' '
+    end
   end
 
   def first_line_blank(lines)
-    return 'warning: unnecessary space at beginning' if lines[0].length.zero?
+    lines.each_with_index do |_line, index|
+      return 'warning: on line ' + (index + 1).to_s + ' unnecessary space at beginning' if lines[0].length.zero?
+    end
   end
 
   def missing_string_comment(lines)
-    return 'warning: frozen literal string missing' if lines[0].length.zero?
+    lines.each_with_index do |_line, index|
+      return 'warning: on line ' + (index + 1).to_s + ' frozen literal string missing' if lines[0].length.zero?
+    end
   end
 
   def line_end(lines)
-    return 'warning: trailing blank line' if lines[-1] == ''
+    return 'warning: on last line trailing blank lines' if lines[-2].size.zero?
   end
 
   def spacing_signs(lines)
-    lines.each do |line|
-      return 'warning: remove extra space' if line[-1] == ' '
+    lines.each_with_index do |line, index|
+      return 'warning: on line ' + (index + 1).to_s + ' remove extra space at the end' if line[-1] == ' '
     end
   end
 
   def end_line_space(lines)
-    return 'final newline missing' if lines[-1].length.positive?
+    return "after line #{lines.size} final newline missing" if lines.last.length.positive?
   end
 
   def wrong_combination(item1, item2)
@@ -73,3 +79,5 @@ lines = file.readlines.map(&:chomp)
 results = test.run_linter(lines)
 print 'no error' if results.length.zero?
 puts results
+
+#puts lines.size

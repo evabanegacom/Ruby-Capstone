@@ -1,19 +1,18 @@
-require './lib/modules'
+require './bin/modules'
 
 describe LintError do # rubocop:disable Metrics/BlockLength
   test = LintError.new
   file = File.open('sample.rb')
   lines = file.readlines.map(&:chomp)
-
   describe '#semicolon_error' do
     it 'if gives an error if a semicolon is used to end an expression' do
-      expect(test.semicolon_error(lines)).to eql('warning: do not use semicolons to terminate expressions') # rubocop:disable Layout/LineLength
+      expect(test.semicolon_error(lines)).to eql('warning: on line 2 do not use semicolons to terminate expressions') # rubocop:disable Layout/LineLength
     end
   end
 
   describe '#line_length_error' do
     it 'return a warning of a lenghty line' do
-      expect(test.line_length_error(lines)).to eql('warning: line is too long')
+      expect(test.line_length_error(lines)).to eql('warning: line  4  is too long')
     end
   end
 
