@@ -14,7 +14,7 @@ class LintError
 
   def white_space(lines1)
     lines1.each_with_index do |_line, index|
-      return "warning: on line #{lines1.size}  first line identation" if lines1[0][0] == ' '
+      return 'warning: on line ' + (index + 1).to_s + ' first line identation' if lines1[0][0] == ' '
     end
   end
 
@@ -30,8 +30,8 @@ class LintError
     end
   end
 
-  def line_end(lines)
-    return 'warning: on last line trailing blank lines' if lines[-2].size.zero?
+  def line_end(lines1)
+    return "warning: on line #{lines1.size} trailing blank lines" if lines1[-2].size.zero?
   end
 
   def spacing_signs(lines)
@@ -63,8 +63,6 @@ class LintError
     errors.append(error) if error
     error = missing_string_comment(lines)
     errors.append(error) if error
-    error = line_end(lines)
-    errors.append(error) if error
     error = first_line_blank(lines)
     errors.append(error) if error
     errors
@@ -73,6 +71,8 @@ class LintError
   def anodafunc(lines1)
     errors = []
     error = white_space(lines1)
+    errors.append(error) if error
+    error = line_end(lines1)
     errors.append(error) if error
     errors
   end

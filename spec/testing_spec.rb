@@ -4,6 +4,10 @@ describe LintError do # rubocop:disable Metrics/BlockLength
   test = LintError.new
   file = File.open('sample.rb')
   lines = file.readlines.map(&:chomp)
+
+  files = File.open('file_path.rb')
+  lines1 = files.readlines.map(&:chomp)
+
   describe '#semicolon_error' do
     it 'if gives an error if a semicolon is used to end an expression' do
       expect(test.semicolon_error(lines)).to eql('warning: on line 2 do not use semicolons to terminate expressions') # rubocop:disable Layout/LineLength
@@ -17,10 +21,8 @@ describe LintError do # rubocop:disable Metrics/BlockLength
   end
 
   describe '#white_space' do
-    files = File.open('file_path.rb')
-    lines1 = files.readlines.map(&:chomp)
     it 'it return an error if the first character in the first  line is a space' do
-      expect(test.white_space(lines1)).to eql('warning: on line 1  first line identation')
+      expect(test.white_space(lines1)).to eql('warning: on line 1 first line identation')
     end
   end
 
@@ -47,7 +49,7 @@ describe LintError do # rubocop:disable Metrics/BlockLength
 
   describe '#line_end' do
     it 'return a warning if there are blank lines below the last character' do
-      expect(test.line_end(lines)).to eql('warning: trailing blank line')
+      expect(test.line_end(lines1)).to eql('warning: on line 4 trailing blank lines')
     end
   end
 
