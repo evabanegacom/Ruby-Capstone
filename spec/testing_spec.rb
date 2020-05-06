@@ -17,8 +17,10 @@ describe LintError do # rubocop:disable Metrics/BlockLength
   end
 
   describe '#white_space' do
+    files = File.open('file_path.rb')
+    lines1 = files.readlines.map(&:chomp)
     it 'it return an error if the first character in the first  line is a space' do
-      expect(test.white_space(lines)).to eql('warning: first line identation')
+      expect(test.white_space(lines1)).to eql('warning: on line 1  first line identation')
     end
   end
 

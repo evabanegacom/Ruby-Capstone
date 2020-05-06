@@ -12,9 +12,9 @@ class LintError
     end
   end
 
-  def white_space(lines)
-    lines.each_with_index do |_line, index|
-      return 'warning: on line ' + (index + 1).to_s + ' first line identation' if lines[0][0] == ' '
+  def white_space(lines1)
+    lines1.each_with_index do |_line, index|
+      return "warning: on line #{lines1.size}  first line identation" if lines1[0][0] == ' '
     end
   end
 
@@ -53,8 +53,6 @@ class LintError
 
   def run_linter(lines)
     errors = []
-    error = white_space(lines)
-    errors.append(error) if error
     error = line_length_error(lines)
     errors.append(error) if error
     error = semicolon_error(lines)
@@ -71,6 +69,13 @@ class LintError
     errors.append(error) if error
     errors
   end
+
+  def anodafunc(lines1)
+    errors = []
+    error = white_space(lines1)
+    errors.append(error) if error
+    errors
+  end
 end
 
 test = LintError.new
@@ -78,6 +83,13 @@ file = File.open('sample.rb')
 lines = file.readlines.map(&:chomp)
 results = test.run_linter(lines)
 print 'no error' if results.length.zero?
+
+
+files = File.open('file_path.rb')
+lines1 = files.readlines.map(&:chomp)
+results1 = test.anodafunc(lines1)
+
+puts results1
 puts results
 
 #puts lines.size
