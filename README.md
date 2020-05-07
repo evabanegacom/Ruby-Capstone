@@ -18,7 +18,7 @@ but that doesn't mean it doesn't respond. It needs to find it's matching error t
 
 # step 2 open this document with an editor
 
- # step 3 run the testing.spec.rb with the command rspec from you terminal
+# step 3 run the testing.spec.rb with the command rspec from you terminal
 
 # step 4 the lib folders contain the files for testing the linters, link the files from the folders by 
 putting them in the modules.rb and testing_spec.rb for testing the lints and rspec
