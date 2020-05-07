@@ -1,6 +1,6 @@
 require './bin/modules'
 
-describe LintError do # rubocop:disable Metrics/BlockLength
+describe LintError do
   test = LintError.new
   file = File.open('lib/sample.rb')
   lines = file.readlines.map(&:chomp)
