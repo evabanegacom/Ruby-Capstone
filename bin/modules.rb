@@ -1,4 +1,4 @@
-class LintError # rubocop:disable Style/Documentation
+class LintError # rubocop:disable Style/Documentation, Style/FrozenStringLiteralComment
   def semicolon_error(lines)
     lines.each_with_index do |line, index|
       return 'warning: on line ' + (index + 1).to_s + ' do not use semicolons to terminate expressions' if line[-1] == ';' # rubocop:disable Layout/LineLength
