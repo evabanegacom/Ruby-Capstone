@@ -18,7 +18,9 @@ step 2 open this document with an editor
 
 step 3 run the testing.spec.rb with the command rspec from you terminal
 
-step 4 link your file to the rspec or include it in this folder to run the linters
+step 4 the lib folders contain the files for testing the linters, link the files from the folders by 
+putting them in the modules.rb and testing_spec.rb for testing the lints and rspec
+i.e lib/sample.rb
 
 step 5 run the modules.rb
 
