@@ -70,7 +70,7 @@ class LintError # rubocop:disable Style/Documentation, FrozenStringLiteralCommen
     end
   end
 
-  def run_linter(lines) # rubocop:disable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/MethodLength
+  def run_linter(lines)
     errors = []
     error = line_length_error(lines)
     errors.append(error) if error
@@ -102,7 +102,6 @@ file = File.open('lib/sample.rb')
 lines = file.readlines.map(&:chomp)
 results = test.run_linter(lines)
 print 'no error' if results.length.zero?
-
 
 files = File.open('lib/file_path.rb')
 lines1 = files.readlines.map(&:chomp)

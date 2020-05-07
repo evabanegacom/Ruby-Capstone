@@ -1,6 +1,9 @@
 AllCops:
   Exclude:
     - "README.md"
+    - "lib/file_path.rb"
+    - "lib/sample.rb"
+    - "spec/testing_spec.rb"
 
   DisplayCopNames: true
 
