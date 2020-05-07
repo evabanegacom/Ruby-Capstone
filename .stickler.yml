@@ -10,8 +10,8 @@ files:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-    - "lib/sample.rb"
-    - "lib/file_path.rb"
+    - "/lib/sample.rb"
+    - "/lib/file_path.rb"
     
 # PLEASE DO NOT enable auto fixing options
 # if you need extra support from you linter - do it in your local env as described in README for this config
