@@ -1,4 +1,4 @@
-class LintError # rubocop:disable Style/Documentation, FrozenStringLiteralComment
+class LintError
   def semicolon_error(lines)
     warning = []
     warnings = []
@@ -14,63 +14,50 @@ class LintError # rubocop:disable Style/Documentation, FrozenStringLiteralCommen
   def line_length_error(lines)
     warning = []
     lines.each_with_index do |line, index|
-      if line.size >= 80
-        warning.append('warning: line  ' + (index + 1).to_s + '  is too long')
-      end
+      warning.append('warning: line  ' + (index + 1).to_s + '  is too long') if line.size >= 80
     end
     warning
   end
 
   def white_space(lines1)
     warning = []
-      if lines1[0][0] == ' '
-        warning << 'warning: on line 1 first line identation of file_path'
-      end
+    warning.append('warning: on line 1 first line identation of file_path') if lines1[0][0] == ' '
     warning
   end
 
   def first_line_blank(lines)
     warning = []
-      if lines[0].length.zero? 
-        warning << 'warning: on line 1 empty space at beginning'
-      end
+    warning.append('warning: on line 1 empty space at beginning') if lines[0].length.zero?
     warning
   end
 
   def missing_string_comment(lines)
     warning = []
-    if lines[0].length.zero? 
-      warning << 'warning: on line 1 frozen literal string missing'
-    end
+    warning.append('warning: on line 1 frozen literal string missing') if lines[0].length.zero?
     warning
   end
 
   def line_end(lines1)
     warning = []
-    if lines1[-2].size.zero?
-      warning.append("warning: on line #{lines1.size + 1} trailing blank lines")
-    end
+    warning.append("warning: on line #{lines1.size + 1} trailing blank lines") if lines1[-2].size.zero?
     warning
   end
 
   def spacing_signs(lines)
     warning = []
     lines.each_with_index do |line, index|
-      if line[-1] == ' '
-      warning << 'warning: on line ' + (index + 1).to_s + ' remove extra space at the end'
-      end
+      warning.append('warning: on line ' + (index + 1).to_s + ' remove extra space at the end') if line[-1] == ' '
     end
     warning
   end
 
   def end_line_space(lines)
     warning = []
-    if lines.last.length.positive?
-      warning << "after line #{lines.size} final newline missing"
-    end
+    warning.append("after line #{lines.size} final newline missing") if lines.last.length.positive?
+    warning
   end
 
-  def run_linter(lines)
+  def run_linter(lines) # rubocop:disable Metrics/CyclomaticComplexity
     errors = []
     error = line_length_error(lines)
     errors.append(error) if error
