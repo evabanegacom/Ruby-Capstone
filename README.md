@@ -5,6 +5,8 @@ Using classes and methods to declare or write the lints
 There's also the application of Rspec for demonstration and testing of these linting algorithms
 the Rspec test fails if there is no error test for it
 
+the lib folder contains testing files with errors so the linter can catch them to demonstrate it's functionality sample.rb and file_path.rb
+
 
 The Rspec will return an error message if it does not find an error that matches with it
 
