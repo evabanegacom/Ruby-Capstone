@@ -48,7 +48,7 @@ class LintError # rubocop:disable Style/Documentation, FrozenStringLiteralCommen
   def line_end(lines1)
     warning = []
     if lines1[-2].size.zero?
-      warning.append("warning: on line #{lines1.size} trailing blank lines")
+      warning.append("warning: on line #{lines1.size + 1} trailing blank lines")
     end
     warning
   end
