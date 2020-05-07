@@ -16,11 +16,11 @@ Step 1 clone this folder from my repo
 
 step 2 open this document with an editor
 
-step 3 run the modules.rb
+step 3 run the testing.spec.rb with the command rspec from you terminal
 
-step 4 run the testing.spec.rb with the command rspec from you terminal
+step 4 link your file to the rspec or include it in this folder to run the linters
 
-step 5 link your file to the rspec or include it in this folder to run the linters
+step 5 run the modules.rb
 
 Linter
 I created 8 linters
