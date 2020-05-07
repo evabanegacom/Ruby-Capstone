@@ -12,21 +12,21 @@ The Rspec will return an error message if it does not find an error that matches
 
 but that doesn't mean it doesn't respond. It needs to find it's matching error to return the correct value
 
-Using this file
+# USING THIS FILE
 
-Step 1 clone this folder from my repo
+# step 1 clone this folder from my repo
 
-step 2 open this document with an editor
+# step 2 open this document with an editor
 
-step 3 run the testing.spec.rb with the command rspec from you terminal
+ # step 3 run the testing.spec.rb with the command rspec from you terminal
 
-step 4 the lib folders contain the files for testing the linters, link the files from the folders by 
+# step 4 the lib folders contain the files for testing the linters, link the files from the folders by 
 putting them in the modules.rb and testing_spec.rb for testing the lints and rspec
 i.e lib/sample.rb
 
-step 5 run the modules.rb
+# step 5 run the modules.rb
 
-Linter
+# LINTERS CREATED
 I created 8 linters
 
 1 semicolon error: An array or expression should not end with a semicolon
