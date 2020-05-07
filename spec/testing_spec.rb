@@ -2,10 +2,10 @@ require './bin/modules'
 
 describe LintError do # rubocop:disable Metrics/BlockLength
   test = LintError.new
-  file = File.open('sample.rb')
+  file = File.open('lib/sample.rb')
   lines = file.readlines.map(&:chomp)
 
-  files = File.open('file_path.rb')
+  files = File.open('lib/file_path.rb')
   lines1 = files.readlines.map(&:chomp)
 
   describe '#semicolon_error' do
@@ -16,13 +16,13 @@ describe LintError do # rubocop:disable Metrics/BlockLength
 
   describe '#line_length_error' do
     it 'return a warning of a lenghty line' do
-      expect(test.line_length_error(lines)).to eql('warning: line  4  is too long')
+      expect(test.line_length_error(lines)).to eql('warning: line  4  is too long') # rubocop:disable Layout/LineLength
     end
   end
 
   describe '#white_space' do
-    it 'it return an error if the first character in the first  line is a space' do
-      expect(test.white_space(lines1)).to eql('warning: on line 1 first line identation')
+    it 'it return an error if the first character in the first  line is a space' do # rubocop:disable Layout/LineLength
+      expect(test.white_space(lines1)).to eql('warning: on line 1 first line identation of file_path') # rubocop:disable Layout/LineLength
     end
   end
 
@@ -49,19 +49,19 @@ describe LintError do # rubocop:disable Metrics/BlockLength
 
   describe '#line_end' do
     it 'return a warning if there are blank lines below the last character' do
-      expect(test.line_end(lines1)).to eql('warning: on line 4 trailing blank lines')
+      expect(test.line_end(lines1)).to eql('warning: on line 4 trailing blank lines') # rubocop:disable Layout/LineLength
     end
   end
 
   describe '#spacing_signs' do
     it 'it returns a warning if there is an extra space at the end of an expression' do # rubocop:disable Layout/LineLength
-      expect(test.spacing_signs(lines)).to eql('warning: on line 5 remove extra space at the end')
+      expect(test.spacing_signs(lines)).to eql('warning: on line 5 remove extra space at the end') # rubocop:disable Layout/LineLength
     end
   end
 
   describe '#end_line_space' do
     it 'return a warning if there is no blank line after the last line with characters' do # rubocop:disable Layout/LineLength
-      expect(test.end_line_space(lines)).to eql('after line 5 final newline missing')
+      expect(test.end_line_space(lines)).to eql('after line 5 final newline missing') # rubocop:disable Layout/LineLength
     end
   end
 end
