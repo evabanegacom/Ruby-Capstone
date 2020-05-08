@@ -1,4 +1,4 @@
-require './bin/modules'
+require './bin/main'
 
 describe LintError do
   test = LintError.new

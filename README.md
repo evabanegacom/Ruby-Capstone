@@ -18,11 +18,11 @@ but that doesn't mean it doesn't respond. It needs to find it's matching error t
 
 # step 2 open this document with a Vscode editor
 
-# step 3 run the modules.rb and see how the linter catchees the errors. Also read the program to know how it works
+# step 3 run the main.rb and see how the linter catchees the errors. Also read the program to know how it works
 
-# step 4 the lib folders contain the sample files for testing the linters, they already contain errors. if you want to use another file to test, create a ruby file and add link it's path to the modules.rb and the testing_spec.rb
+# step 4 the lib folders contain the sample files for testing the linters, they already contain errors. if you want to use another file to test, create a ruby file and add link it's path to the main.rb and the testing_spec.rb
 
-# step 5 run the modules.rb again and see that it caught the errors, then run the test_spec.rb and see that the tests work; if the test fails, then it didn't catch the errors it was given
+# step 5 run the main.rb again and see that it caught the errors, then run the test_spec.rb and see that the tests work; if the test fails, then it didn't catch the errors it was given
 
 # LINTERS CREATED
 I created 8 linters
