@@ -45,13 +45,13 @@ describe LintError do
   end
 
   describe '#spacing_signs' do
-    it 'it returns a warning if there is an extra space at the end of an expression' do 
+    it 'it returns a warning if there is an extra space at the end of an expression' do
       expect(test.spacing_signs(lines)).to eql(['warning: on line 5 remove extra space at the end'])
     end
   end
 
   describe '#end_line_space' do
-    it 'return a warning if there is no blank line after the last line with characters' do 
+    it 'return a warning if there is no blank line after the last line with characters' do
       expect(test.end_line_space(lines)).to eql(['after line 5 final newline missing'])
     end
   end
