@@ -1,8 +1,8 @@
 AllCops:
   Exclude:
     - "README.md"
-    - "lib/file_path.rb"
-    - "lib/sample.rb"
+    - "test-files/file_path.rb"
+    - "test-files/sample.rb"
     - "spec/testing_spec.rb"
     - "spec/spec_helper.rb"
 

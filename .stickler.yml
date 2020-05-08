@@ -10,8 +10,8 @@ files:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-    - "lib/sample.rb"
-    - "lib/file_path.rb"
+    - "test-files/sample.rb"
+    - "test-files/file_path.rb"
     - "spec/spec_helper.rb"
     
 # PLEASE DO NOT enable auto fixing options

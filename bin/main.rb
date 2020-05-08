@@ -85,12 +85,12 @@ class LintError
 end
 
 test = LintError.new
-file = File.open('lib/sample.rb')
+file = File.open('test-files/sample.rb')
 lines = file.readlines.map(&:chomp)
 results = test.run_linter(lines)
 print 'no error' if results.length.zero?
 
-files = File.open('lib/file_path.rb')
+files = File.open('test-files/file_path.rb')
 lines1 = files.readlines.map(&:chomp)
 results1 = test.anodafunc(lines1)
 

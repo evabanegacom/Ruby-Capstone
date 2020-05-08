@@ -2,10 +2,10 @@ require './bin/main'
 
 describe LintError do
   test = LintError.new
-  file = File.open('lib/sample.rb')
+  file = File.open('test-files/sample.rb')
   lines = file.readlines.map(&:chomp)
 
-  files = File.open('lib/file_path.rb')
+  files = File.open('test-files/file_path.rb')
   lines1 = files.readlines.map(&:chomp)
 
   describe '#semicolon_error' do
