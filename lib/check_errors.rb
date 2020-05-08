@@ -1,6 +1,6 @@
 # lib/check_errors.rb
 
-require './bin/main.rb'
+require_relative('../bin/main.rb')
 
 class ErrorCheck < LintError
   def initialize()
