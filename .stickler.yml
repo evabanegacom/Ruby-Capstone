@@ -12,7 +12,6 @@ files:
     - "node_modules/**/*"
     - "/lib/sample.rb"
     - "/lib/file_path.rb"
-    - "/bin/modules.rb"
     - "/spec/spec_helper.rb"
     
 # PLEASE DO NOT enable auto fixing options
