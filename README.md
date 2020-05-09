@@ -14,20 +14,20 @@ but that doesn't mean it doesn't respond. It needs to find it's matching error t
 
 # USING THIS FILE
 
-# step 1 clone this folder from my repo
+step 1 clone this folder from my repo
 
-# step 2 open this document with a Vscode editor
+step 2 open this document with a Vscode editor
 
-# step 3 run the check_errors.rb and see how the linter catchees the errors. Also read the program to know how it works
+step 3 run the check_errors.rb and see how the linter catchees the errors. Also read the program to know how it works
 
-# step 4 the test-files folders contain the sample files for testing the linters, they already contain errors. if you want to use another file to test, create a ruby file and add link it's path to the main.rb and the testing_spec.rb
+step 4 the test-files folders contain the sample files for testing the linters, they already contain errors. if you want to use another file to test, create a ruby file and add link it's path to the main.rb and the testing_spec.rb
 
-# step 5 run the check_errors.rb again and see that it caught the errors, then run the test_spec.rb and see that the tests work; if the test fails, then it didn't catch the errors it was given
+step 5 run the check_errors.rb again and see that it caught the errors, then run the test_spec.rb and see that the tests work; if the test fails, then it didn't catch the errors it was given
 
 
 # LINTERS CREATED
 I created 8 linters
-
+ 
 1 semicolon error: An array or expression should not end with a semicolon
 i.e array = [1, 2, 3, 4, 5]; even if it's a string
 
